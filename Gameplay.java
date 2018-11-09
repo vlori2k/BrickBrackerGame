@@ -15,7 +15,8 @@ import javax.swing.Timer;                     //Import the library "AWT" Timer
 
 import javax.swing.JPanel;                    //Import the library "SWING" JPanel
 
-public class Gameplay extends JPanel implements KeyListener, ActionListener{  //Create a class "Gameplay" and make this public
+public class Gameplay extends JPanel implements KeyListener, ActionListener{
+
     private boolean play = false;                                             //Create a variable "play" and set this to be false
     private int score = 0;                                                    //Create a int variable "score" and set this to be 0
 
@@ -32,6 +33,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{  //
     private int ballYdir = -2;                                                //Create a variable ""
 
     private MapGenerator map;                                                 //Create a variable MapGenerator(from  the class) and set this to be variable map on the Gameplay
+    private boolean False;
 
     public Gameplay() {                                                       //Constructor
         map = new MapGenerator(3, 7);                                         //Here we scale and fix the size of the bricks
@@ -44,7 +46,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{  //
     }
 
     public void paint(Graphics g) {                                            //Add a method called "paint" which takes Graphics as a parameter, we add the alias g for this.
-        //Underneat we will fill GUI. We give colors to the ball, background color etc.
+        //Underneath we will fill GUI. We give colors to the ball, background color etc.
 
         g.setColor(Color.green);                                              //Here we set the background color to be green
         g.fillRect(1, 1, 692, 592);                           //Here we set the size of the background
@@ -127,7 +129,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener{  //
 
                             if(ballpositionX + 19 <= brickRect.x || ballpositionX + 1 >= brickRect.x + brickRect.width){ //IF statement which says: "IF ballpositionX + 19 are equal or less than brirect.x OR
                                 ballXdir = -ballXdir; //OR ballpositionX + 1 is equal or higher than brickRect.x together brickRect.width" Then:
-                                                      //Then the variable ballXdir is subtracted by itself
+                                //Then the variable ballXdir is subtracted by itself
                             } else {                  //otherwise:
                                 ballYdir = -ballYdir; //otherwise ballYdir should be subtracted by itself..
                             }
